@@ -87,7 +87,7 @@ read_isinfo(string file)
 			if (iter != isinfo.end())
 				isinfo[rg].first = val;
 			else
-				isinfo[rg] = make_pair<double,double>(val, (double) 0);
+				isinfo[rg] = std::pair<double,double>(val, (double) 0);
 		} else if (line.find("Standard deviation of insert size") !=
 		           string::npos) {
 			rg = get_rg(line);
@@ -98,7 +98,7 @@ read_isinfo(string file)
 			if (iter != isinfo.end())
 				isinfo[rg].second = val;
 			else
-				isinfo[rg] = make_pair<double,double>((double) 0, val);
+				isinfo[rg] = std::pair<double,double>((double) 0, val);
 		}
 	}
 
