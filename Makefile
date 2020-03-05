@@ -18,7 +18,7 @@ install : all
 	mv ./dre $(INSTALL_DIR)/
 
 dre: dre.o Group.o gzstream.o
-	$(CXX) -L $(BTLIB) $(PROFILE) -o dre dre.o gzstream.o Group.o -lbamtools -lbamtools-utils
+	$(CXX) -L $(BTLIB) $(PROFILE) -o dre dre.o gzstream.o Group.o -lbamtools -lbamtools-utils -lz
 
 dre.o: dre.cpp
 	$(CXX) $(CXXFLAGS) dre.cpp
